@@ -27,7 +27,8 @@
     "react-native-web": "0.18.9"
   },
   "dependencies": {
-    "@babel/runtime": "^7.18.9"
+    "@babel/runtime": "^7.18.9",
+    "react-native-image-placeholder": "^1.0.14"
   },
   "devDependencies": {
     "@manypkg/cli": "^0.19.1",

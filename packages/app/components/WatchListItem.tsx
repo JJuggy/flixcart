@@ -18,6 +18,7 @@ import { WatchListItem as IWatchListItem } from 'app/helpers/types'
 import {} from 'solito'
 import { useNotificationResponse } from 'app/hooks/useNotification'
 import { addItemToWatchList, removeItemFromWatchList, useItemInWatchList } from 'app/store/actions'
+import ImageLoad from 'react-native-image-placeholder';
 
 interface WatchListItemProps extends CardProps {
   item: IWatchListItem
@@ -51,7 +52,15 @@ export function WatchListItem(props: WatchListItemProps) {
         {...rest}
       >
         <XStack flex={1} space="$4">
-          <Image borderRadius={8} src={item.image || DEFAULT_IMAGE} height="100%" width={100} />
+          <ImageLoad 
+           style={{ width: 100, height: '100%', borderRadius:8 ,  }}
+           loadingStyle={{ size: 'large', color: 'blue' }}
+           source={{ uri: item.image}}
+           isShowActivity={false}
+           placeholderSource={{uri:'https://critics.io/img/movies/poster-placeholder.png'}}
+           placeholderStyle={{width:100, height:'100%', borderRadius:8}}
+          />
+          {/* <Image borderRadius={8} src={item.image || DEFAULT_IMAGE} height="100%" width={100} /> */}
           <YStack paddingVertical="$2" space="$2" f={1} width="auto">
             <XStack ai="center">
               <Text fontWeight="600" fontSize={16} color="white" marginRight="$4">
